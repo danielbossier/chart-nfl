@@ -1,4 +1,4 @@
-export const TeamsData = [
+export const TeamData = [
     {
         id: 1,
         team: "49ers",

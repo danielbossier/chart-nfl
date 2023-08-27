@@ -16,6 +16,7 @@ TypeError: Object(...) is not a function
 App
 D:/Coding Projects/GitHub/chart-nfl/src/App.js:6
 
+- https://stackoverflow.com/questions/51066111/react-function-says-is-not-a-function
 
 Will then need to troubleshoot importing data into plot
 

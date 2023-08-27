@@ -4,7 +4,7 @@ import ScatterPlot from "./Components/ScatterPlot";
 import {TeamData} from './Data'
 
 function App() {
-  const [teamData, /*setTeamData*/] = teamState({
+  const [teamData] = teamState({
     labels: TeamData.map((data) => data.team),
     datasets: [
       {

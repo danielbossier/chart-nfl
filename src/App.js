@@ -1,29 +1,30 @@
-import React, { teamState } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import ScatterPlot from "./Components/ScatterPlot";
-import { TeamData } from './Data';
+import { TeamData } from "./Data";
 
 function App() {
-  const [teamData, setTeamData] = teamState({
+  // eslint-disable-next-line
+  const [teamData, setTeamData] = useState({
     labels: TeamData.map((data) => data.team),
     datasets: [
-      {
-        label: 'X axis?',
+        {
+            label: "How Good",
         data: TeamData.map((data) => data.howGood),
       },
       {
-        label: 'Y axis?',
+        label: "How Like",
         data: TeamData.map((data) => data.howLike),
       },
     ],
   });
-  
-  return (
-    <div className="App">
-      <div style={{ width: 700 }}>
-        {/* <BarChart chartData={userData} /> */}
-      </div>
-      <div>
+
+return (
+  <div className="App">
+      {/* <div style={{ width: 700 }}>
+        <BarChart chartData={userData} />
+      </div> */}
+      <div style={{ width: 1200 }}>
         <ScatterPlot chartData={teamData}/>
         <h1>THIS WILL BE AN NFL CHART</h1>
       </div>
@@ -31,23 +32,4 @@ function App() {
   );
 }
 
-// function App() {
-//   const [userData, setUserData] = useState({
-//     labels: UserData.map((data) => data.year),
-//     datasets: [
-//       {
-//         label: "Users Gained",
-//         data: UserData.map((data) => data.userGain),
-//         backgroundColor: [
-//           "rgba(75,192,192,1)",
-//           "#ecf0f1",
-//           "#50AF95",
-//           "#f3ba2f",
-//           "#2a71d0",
-//         ],
-//         borderColor: "black",
-//         borderWidth: 2,
-//       },
-//     ],
-//   });
 export default App;

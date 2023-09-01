@@ -2,8 +2,8 @@ export const TeamData = [
     {
         id: 1,
         team: "49ers",
-        howGood: 0,
-        howLike: 0,
+        howGood: 5,
+        howLike: 5,
     },
     {
         id: 2,
@@ -191,4 +191,4 @@ export const TeamData = [
         howGood: 0,
         howLike: 0,
     },
-]
+];

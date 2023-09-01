@@ -9,12 +9,12 @@ function App() {
     labels: TeamData.map((data) => data.team),
     datasets: [
         {
-            label: "How Good",
-        data: TeamData.map((data) => data.howGood),
+        label: "How Good",
+        data: TeamData.map((data) => data.x),
       },
       {
         label: "How Like",
-        data: TeamData.map((data) => data.howLike),
+        data: TeamData.map((data) => data.y),
       },
     ],
   });
@@ -26,7 +26,7 @@ return (
       </div> */}
       <div style={{ width: 1200 }}>
         <ScatterPlot chartData={teamData}/>
-        <h1>THIS WILL BE AN NFL CHART</h1>
+        {/* <h1>THIS WILL BE AN NFL CHART</h1> */}
       </div>
     </div>
   );

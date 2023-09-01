@@ -2,8 +2,8 @@ export const TeamData = [
     {
         id: 1,
         team: "49ers",
-        howGood: 5,
-        howLike: 5,
+        x: 2,
+        y: 2,
     },
     {
         id: 2,

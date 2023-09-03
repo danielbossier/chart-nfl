@@ -2,13 +2,13 @@ export const TeamData = [
     {
         id: 1,
         team: "49ers",
-        x: 0,
+        x: 20,
         y: 20,
     },
     {
         id: 2,
         team: "Rams",
-        x: 5,
+        x: 15,
         y: 15,
     },
     {
@@ -20,13 +20,13 @@ export const TeamData = [
     {
         id: 4,
         team: "Cardinals",
-        x: 15,
+        x: 5,
         y: 5,
     },
     {
         id: 5,
         team: "Saints",
-        howGood: 20,
+        howGood: 0,
         howLike: 0,
     },
     // {

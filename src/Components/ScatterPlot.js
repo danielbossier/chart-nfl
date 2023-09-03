@@ -13,26 +13,62 @@ const ScatterPlot = ({ chartData }) => {
             // maintainAspectRatio: false,
             scales: {
               x: {
-                type: 'linear',
-                position: 'bottom',
+                type: "linear",
+                position: "bottom",
                 title: {
                   display: true,
-                  text: 'How Good Do You Think They Are',
+                  text: "X-Axis Label",
                 },
               },
               y: {
-                type: 'linear',
-                position: 'left',
+                type: "linear",
+                position: "left",
                 title: {
                   display: true,
-                  text: 'How Much Do You Hate Them',
+                  text: "Y-Axis Label",
                 },
               },
             },
           }}
+          plugins={[
+            {
+              id: "custom-point-colors",
+              beforeDraw: (chart) => {
+                const { ctx, data } = chart;
+                const dataset = data.datasets[0];
+  
+                // Define custom colors for points (adjust as needed)
+                const pointColors = [
+                    "rgba(255, 99, 132, 1)", // Red
+                    "rgba(75, 192, 192, 1)", // Green
+                    "rgba(0, 0, 255, 1)", // Blue
+                    "rgba(255, 255, 0 1)", // Yellow
+                  // Add more colors for additional data points
+                ];
+  
+                dataset.data.forEach((point, index) => {
+                  // Set the point color based on the index
+                  const color = pointColors[index % pointColors.length];
+                  ctx.fillStyle = color;
+                  ctx.strokeStyle = color;
+                  ctx.beginPath();
+                  ctx.arc(
+                    point.x,
+                    point.y,
+                    5, // Adjust the point size as needed
+                    0,
+                    Math.PI * 2
+                  );
+                  ctx.closePath();
+                  ctx.fill();
+                  ctx.stroke();
+                });
+              },
+            },
+          ]}
         />
       </div>
     );
   };
-
-export default ScatterPlot;
+  
+  export default ScatterPlot;

@@ -32,7 +32,7 @@ function App() {
     TeamData.forEach((dataPoint) => {
       dataset.data.push({ x: dataPoint.x, y: dataPoint.y });
       dataset.backgroundColor.push("rgba(75, 192, 192, 0.6)"); // Optional point color
-      teamData.labels.push(dataPoint.team);
+      teamData.labels.push(dataPoint.team_name);
     });
 
     // Update the teamData object with the dynamically set dataset

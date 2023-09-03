@@ -1,31 +1,31 @@
 export const TeamData = [
     {
         id: 1,
-        team: "49ers",
+        team_name: "49ers",
         x: 20,
         y: 20,
     },
     {
         id: 2,
-        team: "Rams",
+        team_name: "Rams",
         x: 15,
         y: 15,
     },
     {
         id: 3,
-        team: "Seahawks",
+        team_name: "Seahawks",
         x: 10,
         y: 10,
     },
     {
         id: 4,
-        team: "Cardinals",
+        team_name: "Cardinals",
         x: 5,
         y: 5,
     },
     {
         id: 5,
-        team: "Saints",
+        team_name: "Saints",
         howGood: 0,
         howLike: 0,
     },

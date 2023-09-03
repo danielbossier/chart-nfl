@@ -25,13 +25,18 @@ function App() {
       labels: TeamData.map((data) => data.team),
       datasets: [
         {
-          label: "How Good",
-          data: TeamData.map((data) => data.x),
+          label: TeamData.map((data) => data.team),
+          data: [
+            TeamData.map((data) => data.x),
+            TeamData.map((data) => data.y),
+          ],
         },
-        {
-          label: "How Like",
-          data: TeamData.map((data) => data.y),
-        },
+        // {
+        //   // label: "How Like",
+        //   data: [
+        //     TeamData.map((data) => data.y),
+        //   ],
+        // },
       ],
     });
   }, []); // Empty dependency array ensures the useEffect runs only once

@@ -1,35 +1,84 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import ScatterPlot from "./Components/ScatterPlot";
 import { TeamData } from "./Data";
 
+
 function App() {
-  // eslint-disable-next-line
   const [teamData, setTeamData] = useState({
-    labels: TeamData.map((data) => data.team),
+    labels: [],
     datasets: [
-        {
+      {
         label: "How Good",
-        data: TeamData.map((data) => data.x),
+        data: [],
       },
       {
         label: "How Like",
-        data: TeamData.map((data) => data.y),
+        data: [],
       },
     ],
   });
 
+  useEffect(() => {
+    // Update the teamData object using the data from TeamData
+    setTeamData({
+      labels: TeamData.map((data) => data.team),
+      datasets: [
+        {
+          label: "How Good",
+          data: TeamData.map((data) => data.x),
+        },
+        {
+          label: "How Like",
+          data: TeamData.map((data) => data.y),
+        },
+      ],
+    });
+  }, []); // Empty dependency array ensures the useEffect runs only once
+
+
 return (
   <div className="App">
-      {/* <div style={{ width: 700 }}>
-        <BarChart chartData={userData} />
-      </div> */}
       <div style={{ width: 1200 }}>
         <ScatterPlot chartData={teamData}/>
-        {/* <h1>THIS WILL BE AN NFL CHART</h1> */}
       </div>
     </div>
   );
 }
 
 export default App;
+
+
+// function App() {
+//   // eslint-disable-next-line
+//   const [teamData, setTeamData] = useState({
+//     labels: TeamData.map((data) => data.team),
+//     datasets: [
+//       {
+//         label: "How Good",
+//         data: [
+//           {x: 0, y: 20},
+//           {x: 5, y: 15},
+//           {x: 10, y: 10},
+//           {x: 15, y: 5},
+//           {x: 20, y: 0},
+//         ] 
+//       },
+//       {
+//         label: "How Like",
+//         x: 15,
+//         y: 10
+//       }
+//     ],
+    
+//     [
+//       {
+//         label: "How Good",
+//         data: TeamData.map((data) => data.x),
+//       },
+//       {
+//         label: "How Like",
+//         data: TeamData.map((data) => data.y),
+//       },
+//     ],
+//   });

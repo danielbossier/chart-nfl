@@ -4,71 +4,54 @@ import { Scatter } from 'react-chartjs-2';
 import { Chart as ChartJS } from 'chart.js/auto';
 
 const ScatterPlot = ({ chartData }) => {
-    return (
-      <div>
-        <Scatter
-          data={chartData}
-          options={{
-            responsive: true,
-            // maintainAspectRatio: false,
-            scales: {
-              x: {
-                type: "linear",
-                position: "bottom",
-                title: {
-                  display: true,
-                  text: "How Good",
-                },
-              },
-              y: {
-                type: "linear",
-                position: "left",
-                title: {
-                  display: true,
-                  text: "How Like",
-                },
-              },
-            },
-          }}
-        //   plugins={[
-        //     {
-        //       id: "custom-point-colors",
-        //       beforeDraw: (chart) => {
-        //         const { ctx, data } = chart;
-        //         const dataset = data.datasets[0];
+    // Generate an array of random colors for each data point
+    const generateRandomColors = (numColors) => {
+        const colors = [];
+        for (let i = 0; i < numColors; i++) {
+            const color = `rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(
+                Math.random() * 256
+              )}, ${Math.floor(Math.random() * 256)}, 0.6)`;
+            colors.push(color);
+        }
+        return colors;
+    };
+
+    const dataset = chartData.datasets[0]; // Assuming there is only one dataset
+
+    // Generate random colors for each data point
+    if (dataset.data.length > 0 && dataset.data.length !== dataset.backgroundColor.lenght) {
+        dataset.backgroundColor = generateRandomColors(dataset.data.length);
+    }
+    
+    const options = {
+      scales: {
+        x: {
+          min: -10,
+          max: 10,
+          title: {
+            display: true,
+            text: "How Good",
+          },
+        },
+        y: {
+          min: -10,
+          max: 10,
+          title: {
+            display: true,
+            text: "How Like",
+          },
+        },
+      },
+      plugins: {
+        tooltip: {
+          callbacks: {
+            title: (context) => chartData.labels[context[0].dataIndex], // Display team_name as the title
+          },
+        },
+      },
+    };
   
-        //         // Define custom colors for points (adjust as needed)
-        //         const pointColors = [
-        //             "rgba(255, 99, 132, 1)", // Red
-        //             "rgba(75, 192, 192, 1)", // Green
-        //             "rgba(0, 0, 255, 1)", // Blue
-        //             "rgba(255, 255, 0 1)", // Yellow
-        //           // Add more colors for additional data points
-        //         ];
-  
-        //         dataset.data.forEach((point, index) => {
-        //           // Set the point color based on the index
-        //           const color = pointColors[index % pointColors.length];
-        //           ctx.fillStyle = color;
-        //           ctx.strokeStyle = color;
-        //           ctx.beginPath();
-        //           ctx.arc(
-        //             point.x,
-        //             point.y,
-        //             5, // Adjust the point size as needed
-        //             0,
-        //             Math.PI * 2
-        //           );
-        //           ctx.closePath();
-        //           ctx.fill();
-        //           ctx.stroke();
-        //         });
-        //       },
-            // },
-        //   ]}
-        />
-      </div>
-    );
+    return <Scatter data={chartData} options={options} />;
   };
   
   export default ScatterPlot;

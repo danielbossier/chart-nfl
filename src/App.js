@@ -8,37 +8,40 @@ function App() {
   const [teamData, setTeamData] = useState({
     labels: [],
     datasets: [
-      {
-        label: "How Good",
-        data: [],
-      },
-      {
-        label: "How Like",
-        data: [],
-      },
+      // {
+      //   label: "How Good",
+      //   data: [],
+      // },
+      // {
+      //   label: "How Like",
+      //   data: [],
+      // },
     ],
   });
 
   useEffect(() => {
-    // Update the teamData object using the data from TeamData
-    setTeamData({
-      labels: TeamData.map((data) => data.team),
-      datasets: [
-        {
-          label: TeamData.map((data) => data.team),
-          data: [
-            TeamData.map((data) => data.x),
-            TeamData.map((data) => data.y),
-          ],
-        },
-        // {
-        //   // label: "How Like",
-        //   data: [
-        //     TeamData.map((data) => data.y),
-        //   ],
-        // },
-      ],
+    console.log("Before data mapping:", teamData);
+    // Iterate through each entry in TeamData and append to the existing data
+    const dataset = {
+      label: "Team Data",
+      data: [],
+      backgroundColor: [],
+    };
+
+    // Map the data from TeamData and populate the dataset
+    TeamData.forEach((dataPoint) => {
+      dataset.data.push({ x: dataPoint.x, y: dataPoint.y });
+      dataset.backgroundColor.push("rgba(75, 192, 192, 0.6)"); // Optional point color
+      teamData.labels.push(dataPoint.team);
     });
+
+    // Update the teamData object with the dynamically set dataset
+    setTeamData((prevData) => ({
+      ...prevData,
+      datasets: [dataset],
+    }));
+
+    console.log("After data mapping:", teamData);
   }, []); // Empty dependency array ensures the useEffect runs only once
 
 

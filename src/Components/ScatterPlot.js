@@ -43,19 +43,35 @@ const ScatterPlot = ({ chartData }) => {
     const options = {
         scales: {
         x: {
-          min: -12,
-          max: 12,
+          min: -11,
+          max: 11,
           title: {
             display: true,
             text: "How Good",
           },
+          grid: {
+            display: true,
+            color: "rgba(0, 0, 0, 0.2)",
+            borderColor: "rgba(0, 0, 0, 0.2)",
+          },
+          ticks: {
+            stepSize: 1, // Set the step size to 1 to display each integer value
+          },
         },
         y: {
-          min: -12,
-          max: 12,
+          min: -11.1,
+          max: 11.5,
           title: {
             display: true,
             text: "How Like",
+          },
+          grid: {
+            display: true,
+            color: "rgba(0, 0, 0, 0.2)",
+            borderColor: "rgba(0, 0, 0, 0.2)",
+          },
+          ticks: {
+            stepSize: 1, // Set the step size to 1 to display each integer value
           },
         },
       },

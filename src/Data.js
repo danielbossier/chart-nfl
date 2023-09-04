@@ -9,7 +9,7 @@ export const TeamData = [
     {
         id: 2,
         team_name: "Rams",
-        x: 9,
+        x: 0,
         y: 10,
         image: "/logos/helmetlogos/ramshelmet.png"
 
@@ -18,7 +18,7 @@ export const TeamData = [
         id: 3,
         team_name: "Seahawks",
         x: 8,
-        y: 10,
+        y: 1,
         image: "/logos/helmetlogos/seahawkshelmet.png"
 
     },
@@ -34,7 +34,7 @@ export const TeamData = [
         id: 5,
         team_name: "Saints",
         x: 6,
-        y: 10,
+        y: 0,
         image: "/logos/helmetlogos/saintshelmet.png"
 
     },
@@ -49,8 +49,8 @@ export const TeamData = [
     {
         id: 7,
         team_name: "Buccaneers",
-        x: 4,
-        y: 8,
+        x: 3,
+        y: 4,
         image: "/logos/helmetlogos/buccaneershelmet.png"
 
     },
@@ -177,7 +177,7 @@ export const TeamData = [
     {
         id: 23,
         team_name: "Jaguars",
-        x: -2,
+        x: -3,
         y: 2,
         image: "/logos/helmetlogos/jaguarshelmet.png"
 
@@ -242,7 +242,7 @@ export const TeamData = [
         id: 31,
         team_name: "Ravens",
         x: -8,
-        y: 7,
+        y: 4,
         image: "/logos/helmetlogos/ravenshelmet.png"
 
     },

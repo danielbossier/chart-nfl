@@ -19,9 +19,9 @@ function App() {
   useEffect(() => {
     // Create the dataset and labels
     const dataset = {
-      label: "Team Data",
+      label: "Your Rankings",
       data: TeamData.map((dataPoint) => ({ x: dataPoint.x, y: dataPoint.y })),
-      backgroundColor: Array(TeamData.length).fill("rgba(75, 192, 192, 0.6)"),
+      backgroundColor: Array(TeamData.length).fill("rgba(255,215,0, 0.8)"), // color for Label
     };
 
     const labels = TeamData.map((dataPoint) => dataPoint.team_name);
@@ -36,7 +36,7 @@ function App() {
 
 return (
   <div className="App">
-      <div style={{ width: 1500 }}>
+      <div className="scatter-container" style={{ width: 1500 }}>
         <ScatterPlot chartData={teamData}/>
       </div>
     </div>

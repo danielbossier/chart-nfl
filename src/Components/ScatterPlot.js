@@ -11,7 +11,7 @@ const ScatterPlot = ({ chartData }) => {
     const images = dataset.data.map((dataPoint) => ({
         x: dataPoint.x,
         y: dataPoint.y,
-        image: new Image(70, 70), // Adjust image size here
+        image: new Image(80, 70), // Adjust image size here
     }));
 
     // Load the images and set the source for each image
@@ -51,8 +51,16 @@ const ScatterPlot = ({ chartData }) => {
           },
           grid: {
             display: true,
-            color: "rgba(0, 0, 0, 0.2)",
-            borderColor: "rgba(0, 0, 0, 0.2)",
+            // color: [
+               // Background colors for quadrants
+            // "rgba(255, 0, 0, 0.2)",    // Red (Upper Left)
+            // "rgba(0, 255, 0, 0.2)",    // Green (Upper Right)
+            // "rgba(0, 0, 255, 0.2)",    // Blue (Lower Left)
+            // "rgba(255, 255, 0, 0.2)", // Yellow (Lower Right)
+            // ],
+            borderColor: "rgba(0, 0, 0, 1)", // Color of outside border of chart
+            borderDash: [5], // Set the line style (dotted)
+            borderWidth: 5, // Set the line width
           },
           ticks: {
             stepSize: 1, // Set the step size to 1 to display each integer value
@@ -67,8 +75,16 @@ const ScatterPlot = ({ chartData }) => {
           },
           grid: {
             display: true,
-            color: "rgba(0, 0, 0, 0.2)",
-            borderColor: "rgba(0, 0, 0, 0.2)",
+            // color: [
+            //   // Background colors for quadrants
+            //   "rgba(255, 0, 0, 0.2)",    // Red (Upper Left)
+            //   "rgba(0, 255, 0, 0.2)",    // Green (Upper Right)
+            //   "rgba(0, 0, 255, 0.2)",    // Blue (Lower Left)
+            //   "rgba(255, 255, 0, 0.2)", // Yellow (Lower Right)
+            // ],
+            borderColor: "rgba(0, 0, 0, 1)", // Color of outside border of chart
+            borderDash: [5], // Set the line style (dotted)
+            borderWidth: 5, // Set the line width
           },
           ticks: {
             stepSize: 1, // Set the step size to 1 to display each integer value
@@ -83,6 +99,8 @@ const ScatterPlot = ({ chartData }) => {
         },
       },
     };
+
+    // options.scales.y.border.display = true;
   
     return <Scatter data={chartData} options={options} />;
   };

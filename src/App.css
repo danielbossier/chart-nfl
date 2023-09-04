@@ -36,3 +36,46 @@
     transform: rotate(360deg);
   }
 }
+
+/* The following CSS is to create colored quadrants of chart */
+.scatter-container {
+  position: relative;
+  width: 800px; /* Adjust the width as needed */
+  height: 800px; /* Adjust the height as needed */
+}
+
+.quadrant-upper-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  background-color: rgba(255, 0, 0, 0.2); /* Red (Upper Left) */
+}
+
+.quadrant-upper-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 50%;
+  background-color: rgba(0, 255, 0, 0.2); /* Green (Upper Right) */
+}
+
+.quadrant-lower-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  background-color: rgba(0, 0, 255, 0.2); /* Blue (Lower Left) */
+}
+
+.quadrant-lower-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  height: 50%;
+  background-color: rgba(255, 255, 0, 0.2); /* Yellow (Lower Right) */
+}

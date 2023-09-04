@@ -83,7 +83,7 @@ const ScatterPlot = ({ chartData }) => {
             //   "rgba(255, 255, 0, 0.2)", // Yellow (Lower Right)
             // ],
             borderColor: "rgba(0, 0, 0, 1)", // Color of outside border of chart
-            borderDash: [5], // Set the line style (dotted)
+            //borderDash: [5], // Set the line style (dotted)
             borderWidth: 5, // Set the line width
           },
           ticks: {
@@ -99,8 +99,10 @@ const ScatterPlot = ({ chartData }) => {
         },
       },
     };
-
-    // options.scales.y.border.display = true;
+        // can use the following to make shorthand edits
+    // options.scales.y.grid.borderWidth = 5;
+    // options.scales.y.grid.drawBorder = true;
+    // options.scales.y.grid.color = "black";
   
     return <Scatter data={chartData} options={options} />;
   };

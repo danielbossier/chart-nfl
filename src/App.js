@@ -36,7 +36,7 @@ function App() {
 
 return (
   <div className="App">
-      <div style={{ width: 1200 }}>
+      <div style={{ width: 1500 }}>
         <ScatterPlot chartData={teamData}/>
       </div>
     </div>

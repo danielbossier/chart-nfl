@@ -68,7 +68,15 @@ const ScatterPlot = ({ chartData }) => {
               } else {
                   return 'rgba(0, 0, 0, 0.2)'; // Default color for other grid lines
               }
-          },
+            },
+            borderDash: (context) => {
+              // Check if it's the specific grid line you want to color differently
+              if (context.tick.value === 0) {
+                  return [0]; // Set the color to black for the specific grid line
+              } else {
+                  return [5]; // Default color for other grid lines
+              }
+            },
           },
           ticks: {
             stepSize: 1, // Set the step size to 1 to display each integer value
@@ -100,7 +108,15 @@ const ScatterPlot = ({ chartData }) => {
               } else {
                   return 'rgba(0, 0, 0, 0.2)'; // Default color for other grid lines
               }
-          },
+            },
+            borderDash: (context) => {
+              // Check if it's the specific grid line you want to color differently
+              if (context.tick.value === 0) {
+                  return [0]; // Set the color to black for the specific grid line
+              } else {
+                  return [5]; // Default color for other grid lines
+              }
+            },  
           },
           ticks: {
             stepSize: 1, // Set the step size to 1 to display each integer value

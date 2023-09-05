@@ -61,6 +61,14 @@ const ScatterPlot = ({ chartData }) => {
             borderColor: "rgba(0, 0, 0, 1)", // Color of outside border of chart
             borderDash: [5], // Set the line style (dotted)
             borderWidth: 5, // Set the line width
+            color: (context) => {
+              // Check if it's the specific grid line you want to color differently
+              if (context.tick.value === 0) {
+                  return 'black'; // Set the color to black for the specific grid line
+              } else {
+                  return 'rgba(0, 0, 0, 0.2)'; // Default color for other grid lines
+              }
+          },
           },
           ticks: {
             stepSize: 1, // Set the step size to 1 to display each integer value
@@ -85,6 +93,14 @@ const ScatterPlot = ({ chartData }) => {
             borderColor: "rgba(0, 0, 0, 1)", // Color of outside border of chart
             borderDash: [5], // Set the line style (dotted)
             borderWidth: 5, // Set the line width
+            color: (context) => {
+              // Check if it's the specific grid line you want to color differently
+              if (context.tick.value === 0) {
+                  return 'black'; // Set the color to black for the specific grid line
+              } else {
+                  return 'rgba(0, 0, 0, 0.2)'; // Default color for other grid lines
+              }
+          },
           },
           ticks: {
             stepSize: 1, // Set the step size to 1 to display each integer value
@@ -99,10 +115,11 @@ const ScatterPlot = ({ chartData }) => {
         },
       },
     };
-        // can use the following to make shorthand edits
+      // can use the following to make shorthand edits
     // options.scales.y.grid.borderWidth = 5;
     // options.scales.y.grid.drawBorder = true;
     // options.scales.y.grid.color = "black";
+    // options.scales.x.grid.color = "black";
   
     return <Scatter data={chartData} options={options} />;
   };

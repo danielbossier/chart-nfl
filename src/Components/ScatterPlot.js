@@ -33,8 +33,8 @@ const ScatterPlot = ({ chartData }) => {
           },
           grid: {
             display: true,
-            borderColor: "rgba(0, 0, 0, 1)", // Color of outside border of chart
-            borderWidth: 5, // Set the line width
+            // borderColor: "rgba(0, 0, 0, 1)", // Color of outside border of chart
+            // borderWidth: 5, // Set the line width
             color: (context) => {
               // Check if it's the specific grid line you want to color differently
               if (context.tick.value === 0) {
@@ -65,8 +65,8 @@ const ScatterPlot = ({ chartData }) => {
           },
           grid: {
             display: true,
-            borderColor: "rgba(0, 0, 0, 1)", // Color of outside border of chart
-            borderWidth: 5, // Set the line width
+            // borderColor: "rgba(0, 0, 0, 1)", // Color of outside border of chart
+            // borderWidth: 5, // Set the line width
             color: (context) => {
               // Check if it's the specific grid line you want to color differently
               if (context.tick.value === 0) {

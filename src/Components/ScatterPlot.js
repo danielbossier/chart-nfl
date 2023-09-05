@@ -22,24 +22,6 @@ const ScatterPlot = ({ chartData }) => {
     // Update the dataset's pointStyle Property
     dataset.pointStyle = images.map((image) => image.image);
 
-    // Generate an array of random colors for each data point
-    // const generateRandomColors = (numColors) => {
-    //     const colors = [];
-    //     for (let i = 0; i < numColors; i++) {
-    //         const color = `rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(
-    //             Math.random() * 256
-    //           )}, ${Math.floor(Math.random() * 256)}, 0.6)`;
-    //         colors.push(color);
-    //     }
-    //     return colors;
-    // };
-
-    // const dataset = chartData.datasets[0]; // Assuming there is only one dataset
-
-    // // Generate random colors for each data point
-    // if (dataset.data.length > 0 && dataset.data.length !== dataset.backgroundColor.lenght) {
-    //     dataset.backgroundColor = generateRandomColors(dataset.data.length);
-    // }
     const options = {
         scales: {
         x: {
@@ -51,15 +33,7 @@ const ScatterPlot = ({ chartData }) => {
           },
           grid: {
             display: true,
-            // color: [
-               // Background colors for quadrants
-            // "rgba(255, 0, 0, 0.2)",    // Red (Upper Left)
-            // "rgba(0, 255, 0, 0.2)",    // Green (Upper Right)
-            // "rgba(0, 0, 255, 0.2)",    // Blue (Lower Left)
-            // "rgba(255, 255, 0, 0.2)", // Yellow (Lower Right)
-            // ],
             borderColor: "rgba(0, 0, 0, 1)", // Color of outside border of chart
-            borderDash: [5], // Set the line style (dotted)
             borderWidth: 5, // Set the line width
             color: (context) => {
               // Check if it's the specific grid line you want to color differently
@@ -72,9 +46,9 @@ const ScatterPlot = ({ chartData }) => {
             borderDash: (context) => {
               // Check if it's the specific grid line you want to color differently
               if (context.tick.value === 0) {
-                  return [0]; // Set the color to black for the specific grid line
+                  return [0]; // Set the line type to solid for the specific grid line
               } else {
-                  return [5]; // Default color for other grid lines
+                  return [5]; // Dashed for other grid lines
               }
             },
           },
@@ -91,15 +65,7 @@ const ScatterPlot = ({ chartData }) => {
           },
           grid: {
             display: true,
-            // color: [
-            //   // Background colors for quadrants
-            //   "rgba(255, 0, 0, 0.2)",    // Red (Upper Left)
-            //   "rgba(0, 255, 0, 0.2)",    // Green (Upper Right)
-            //   "rgba(0, 0, 255, 0.2)",    // Blue (Lower Left)
-            //   "rgba(255, 255, 0, 0.2)", // Yellow (Lower Right)
-            // ],
             borderColor: "rgba(0, 0, 0, 1)", // Color of outside border of chart
-            borderDash: [5], // Set the line style (dotted)
             borderWidth: 5, // Set the line width
             color: (context) => {
               // Check if it's the specific grid line you want to color differently
@@ -110,11 +76,11 @@ const ScatterPlot = ({ chartData }) => {
               }
             },
             borderDash: (context) => {
-              // Check if it's the specific grid line you want to color differently
+              // Check if it's the specific grid line you want to alter dash
               if (context.tick.value === 0) {
-                  return [0]; // Set the color to black for the specific grid line
+                  return [0]; // Set the line type to solid for the specific grid line
               } else {
-                  return [5]; // Default color for other grid lines
+                  return [5]; // Dashed for other grid lines
               }
             },  
           },
@@ -131,11 +97,6 @@ const ScatterPlot = ({ chartData }) => {
         },
       },
     };
-      // can use the following to make shorthand edits
-    // options.scales.y.grid.borderWidth = 5;
-    // options.scales.y.grid.drawBorder = true;
-    // options.scales.y.grid.color = "black";
-    // options.scales.x.grid.color = "black";
   
     return <Scatter data={chartData} options={options} />;
   };

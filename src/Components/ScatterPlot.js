@@ -26,7 +26,7 @@ const ScatterPlot = ({ chartData }) => {
         scales: {
         x: {
           min: -11,
-          max: 11,
+          max: 10,
           title: {
             display: true,
             text: "How Good",

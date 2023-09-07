@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TeamData } from './data'; // Imports TeamData from data.js
+import { TeamData } from '../Data'; // Imports TeamData from data.js
 
 const DataInputForm = () => {
   const [formData, setFormData] = useState([...TeamData]); // Initialize formData with existing TeamData

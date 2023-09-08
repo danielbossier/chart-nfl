@@ -1,4 +1,4 @@
-import React, { useState, updatedData } from 'react';
+import React, { useState } from 'react';
 import { Scatter } from 'react-chartjs-2';
 // eslint-disable-next-line
 import { Chart as ChartJS } from 'chart.js/auto';
@@ -10,8 +10,13 @@ const ScatterPlot = ({ chartData }) => {
     // To manage edited data
     const [editedData, setEditedData] = useState(TeamData);
 
-    // Create an array of image objects with custom pointStlye
-    const images = dataset.data.map((dataPoint) => ({
+    // Initialize images as an empty array
+    let images = [];
+
+    // Check if dataset and dataset.data exit before mapping
+    if (dataset && dataset.data) {
+      // Create an array of image objects with custom pointStlye
+      images = dataset.data.map((dataPoint) => ({
         x: dataPoint.x,
         y: dataPoint.y,
         image: new Image(80, 70), // Adjust image size here
@@ -24,6 +29,7 @@ const ScatterPlot = ({ chartData }) => {
 
     // Update the dataset's pointStyle Property
     dataset.pointStyle = images.map((image) => image.image);
+  }
 
     const options = {
         scales: {
@@ -120,7 +126,7 @@ const ScatterPlot = ({ chartData }) => {
       const updatedLabels = editedData.map((dataPoint) => dataPoint.team_name);
 
       // Update state with edited data
-      setEditedData(updatedData);
+      setEditedData(editedData);
 
       // Update chart data
       chartData.labels = updatedLabels;

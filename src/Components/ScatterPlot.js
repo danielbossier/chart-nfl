@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, updatedData } from 'react';
 import { Scatter } from 'react-chartjs-2';
 // eslint-disable-next-line
 import { Chart as ChartJS } from 'chart.js/auto';
@@ -7,6 +7,9 @@ import { TeamData } from "../Data";
 const ScatterPlot = ({ chartData }) => {
     const dataset = chartData.datasets[0]; // Assuming there's only one dataset
     
+    // To manage edited data
+    const [editedData, setEditedData] = useState(TeamData);
+
     // Create an array of image objects with custom pointStlye
     const images = dataset.data.map((dataPoint) => ({
         x: dataPoint.x,
@@ -97,8 +100,65 @@ const ScatterPlot = ({ chartData }) => {
         },
       },
     };
+
+    // Handle data point editing
+    const handleEdits = (index, field, value) => {
+      let updatedData = [...editedData];
+      updatedData[index][field] = parseInt(value);
+      setEditedData(updatedData);
+    };
+
+    // Update chart data with edited data
+    const updateChartData = () => {
+      const updatedDataset = {
+        ...dataset,
+        data: editedData.map((dataPoint) => ({
+          x: dataPoint.x,
+          y: dataPoint.y,
+        })),
+      };
+      const updatedLabels = editedData.map((dataPoint) => dataPoint.team_name);
+
+      // Update state with edited data
+      setEditedData(updatedData);
+
+      // Update chart data
+      chartData.labels = updatedLabels;
+      chartData.datasets[0] = updatedDataset;
+    };
   
-    return <Scatter data={chartData} options={options} />;
+    return (
+    <div>
+      {/* Render Chart */}
+      <Scatter data={chartData} options={options} />
+      {/* Input form for editing data */}
+      {editedData.map((dataPoint, index) => (
+        <div key={index}>
+          <label>
+            How Good for {dataPoint.team_name}:
+            <input
+              type="number"
+              value={dataPoint.x}
+              onChange={(e) => handleEdits(index, 'x', e.target.value)}
+            />
+          </label>
+          <label>
+          How Like for {dataPoint.team_name}:
+            <input
+              type="number"
+              value={dataPoint.y}
+              onChange={(e) => handleEdits(index, 'y', e.target.value)}
+            />
+          </label>
+      </div>
+      ))}
+
+      {/* Button to apply changes and update chart */}
+      <button onClick={updateChartData}>Update</button>
+
+      </div>
+
+    );
   };
   
   export default ScatterPlot;

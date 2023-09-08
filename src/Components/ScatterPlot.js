@@ -4,7 +4,7 @@ import { Scatter } from 'react-chartjs-2';
 import { Chart as ChartJS } from 'chart.js/auto';
 import { TeamData } from "../Data";
 
-const ScatterPlot = ({ chartData }) => {
+const ScatterPlot = ({ chartData, teamData, setTeamData }) => {
     const dataset = chartData.datasets[0]; // Assuming there's only one dataset
     
     // To manage edited data
@@ -35,7 +35,7 @@ const ScatterPlot = ({ chartData }) => {
         scales: {
         x: {
           min: -11,
-          max: 10,
+          max: 11,
           title: {
             display: true,
             text: "How Good",
@@ -127,6 +127,15 @@ const ScatterPlot = ({ chartData }) => {
 
       // Update state with edited data
       setEditedData(editedData);
+      
+      // Update the original TeamData with editedData
+      const updatedTeamData = TeamData.map((dataPoint, index) => ({
+        ...dataPoint,
+        x: editedData[index].x,
+        y: editedData[index].y,
+      }));
+
+      setTeamData(updatedTeamData);
 
       // Update chart data
       chartData.labels = updatedLabels;

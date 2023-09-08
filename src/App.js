@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import ScatterPlot from "./Components/ScatterPlot";
-import { TeamData } from "./Data";
+import { TeamData as initialTeamData } from "./Data";
 
 
 function App() {
-  const [teamData, setTeamData] = useState({
+  const [teamData, setTeamData] = useState(initialTeamData);
+  
+  const [chartData, setChartData] = useState({
     labels: [],
     datasets: [
       {
@@ -20,24 +22,28 @@ function App() {
     // Create the dataset and labels
     const dataset = {
       label: "Your Rankings",
-      data: TeamData.map((dataPoint) => ({ x: dataPoint.x, y: dataPoint.y })),
-      backgroundColor: Array(TeamData.length).fill("rgba(255,215,0, 0.8)"), // color for Label
+      data: teamData.map((dataPoint) => ({ x: dataPoint.x, y: dataPoint.y })),
+      backgroundColor: Array(teamData.length).fill("rgba(255,215,0, 0.8)"), // color for Label
     };
 
-    const labels = TeamData.map((dataPoint) => dataPoint.team_name);
+    const labels = teamData.map((dataPoint) => dataPoint.team_name);
 
     // Update the state
-    setTeamData({
+    setChartData({
       labels,
       datasets: [dataset],
     });
-  }, []);
+  }, [teamData]);
 
 
 return (
   <div className="App">
       <div className="scatter-container" style={{ width: "1500px" }}>
-        <ScatterPlot chartData={teamData}/>
+        <ScatterPlot
+          chartData={chartData}
+          teamData={teamData}
+          setTeamData={setTeamData}
+          />
       </div>
     </div>
   );

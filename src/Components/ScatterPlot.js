@@ -3,6 +3,7 @@ import { Scatter } from 'react-chartjs-2';
 // eslint-disable-next-line
 import { Chart as ChartJS } from 'chart.js/auto';
 import { TeamData } from "../Data";
+import '../styles.css';
 
 const ScatterPlot = ({ chartData, teamData, setTeamData }) => {
     const dataset = chartData.datasets[0]; // Assuming there's only one dataset
@@ -148,10 +149,10 @@ const ScatterPlot = ({ chartData, teamData, setTeamData }) => {
       <Scatter data={chartData} options={options} />
       {/* Input form for editing data */}
       {editedData.map((dataPoint, index) => (
-        <div key={index}>
+        <div className="input-div" key={index}>
           <label>
             How Good for {dataPoint.team_name}:
-            <input
+            <input className="input-how-good"
               type="number"
               value={dataPoint.x}
               onChange={(e) => handleEdits(index, 'x', e.target.value)}
@@ -159,7 +160,7 @@ const ScatterPlot = ({ chartData, teamData, setTeamData }) => {
           </label>
           <label>
           How Like for {dataPoint.team_name}:
-            <input
+            <input className="input-how-like"
               type="number"
               value={dataPoint.y}
               onChange={(e) => handleEdits(index, 'y', e.target.value)}

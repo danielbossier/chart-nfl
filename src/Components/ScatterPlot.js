@@ -155,7 +155,8 @@ const ScatterPlot = ({ chartData, teamData, setTeamData }) => {
       {editedData.map((dataPoint, index) => (
         <div className="input-div" key={index}>
           <label>
-            How Good are the {dataPoint.team_name}:
+            How Good are the 
+            <p>{dataPoint.team_name}:</p>
             <input
               className="input-how-good"
               type="range"
@@ -168,7 +169,8 @@ const ScatterPlot = ({ chartData, teamData, setTeamData }) => {
             <span>{dataPoint.x}</span>
           </label>
           <label>
-          How Do you Like the {dataPoint.team_name}:
+            How Much do you Like the 
+            <p>{dataPoint.team_name}:</p>
             <input
               className="input-how-like"
               type="range"

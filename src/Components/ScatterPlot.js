@@ -160,22 +160,22 @@ const ScatterPlot = ({ chartData, teamData, setTeamData }) => {
         <div className="input-div" key={index}>
           {dataPoint.team_name}
             <input
-            className="input-how-good"
-            type="range"
-            min={-10}
-            max={10}
-            step={1}
-            value={dataPoint.x}
-            onChange={(e) => handleEdits(index, 'x', e.target.value)}
-          />
-        <span>{dataPoint.x}</span>
+              className="input-how-good"
+              type="range"
+              min={-10}
+              max={10}
+              step={1}
+              value={dataPoint.x}
+              onChange={(e) => handleEdits(index, 'x', e.target.value)}
+            />
+          <span>{dataPoint.x}</span>
       </div>
       ))}
       </div>
 
       {/* Left Column: How Like */}
       <div className="input-column">
-        <h3>How Much do you Like the</h3>
+        <h3>How do you Like the</h3>
           {editedData.map((dataPoint, index) => (
             <div className="input-div" key={index}>
             {dataPoint.team_name}
@@ -188,7 +188,7 @@ const ScatterPlot = ({ chartData, teamData, setTeamData }) => {
               value={dataPoint.y}
               onChange={(e) => handleEdits(index, 'y', e.target.value)}
             />
-            <span>{dataPoint.y}</span>
+          <span>{dataPoint.y}</span>
         </div>
       ))}
     </div>

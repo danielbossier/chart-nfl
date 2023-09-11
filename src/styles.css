@@ -1,15 +1,23 @@
+.input-container {
+    display: flex;
+}
+
+.input-column {
+    flex: 1;
+    padding: 10px;
+}
+
 .input-div {
     background-color: lightblue;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
     padding: 0px;
 }
 
 .input-how-good,
 .input-how-like {
-    width: 700px;
-    background-color: gold;
+    width: 500px;
     text-align: center;
     margin: 0px;
 }

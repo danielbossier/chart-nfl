@@ -152,25 +152,33 @@ const ScatterPlot = ({ chartData, teamData, setTeamData }) => {
       <button onClick={updateChartData}>Update Chart</button>
 
       {/* Input form for editing data */}
+      {/* Left Column: How Good */}
+      <div className="input-container">
+      <div className="input-column">
+      <h3>How Good are the</h3>
       {editedData.map((dataPoint, index) => (
         <div className="input-div" key={index}>
-          <label>
-            How Good are the 
-            <p>{dataPoint.team_name}:</p>
+          {dataPoint.team_name}
             <input
-              className="input-how-good"
-              type="range"
-              min={-10}
-              max={10}
-              step={1}
-              value={dataPoint.x}
-              onChange={(e) => handleEdits(index, 'x', e.target.value)}
-            />
-            <span>{dataPoint.x}</span>
-          </label>
-          <label>
-            How Much do you Like the 
-            <p>{dataPoint.team_name}:</p>
+            className="input-how-good"
+            type="range"
+            min={-10}
+            max={10}
+            step={1}
+            value={dataPoint.x}
+            onChange={(e) => handleEdits(index, 'x', e.target.value)}
+          />
+        <span>{dataPoint.x}</span>
+      </div>
+      ))}
+      </div>
+
+      {/* Left Column: How Like */}
+      <div className="input-column">
+        <h3>How Much do you Like the</h3>
+          {editedData.map((dataPoint, index) => (
+            <div className="input-div" key={index}>
+            {dataPoint.team_name}
             <input
               className="input-how-like"
               type="range"
@@ -181,9 +189,10 @@ const ScatterPlot = ({ chartData, teamData, setTeamData }) => {
               onChange={(e) => handleEdits(index, 'y', e.target.value)}
             />
             <span>{dataPoint.y}</span>
-          </label>
         </div>
       ))}
+    </div>
+    </div>
     </div>
     );
   };

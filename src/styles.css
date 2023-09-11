@@ -1,14 +1,15 @@
 .input-div {
     background-color: lightblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
 }
 
-.input-how-good {
+.input-how-good,
+.input-how-like {
     width: 50px;
     background-color: gold;
     text-align: center;
-}
-.input-how-like {
-    width: 2.5%;
-    background-color: gold;
-    text-align: center;
+    margin: 0px;
 }

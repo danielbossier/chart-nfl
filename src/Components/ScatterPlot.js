@@ -147,6 +147,10 @@ const ScatterPlot = ({ chartData, teamData, setTeamData }) => {
     <div>
       {/* Render Chart */}
       <Scatter data={chartData} options={options} />
+
+      {/* Apply Changes, Update Chart */}
+      <button onClick={updateChartData}>Update Chart</button>
+
       {/* Input form for editing data */}
       {editedData.map((dataPoint, index) => (
         <div className="input-div" key={index}>
@@ -154,10 +158,10 @@ const ScatterPlot = ({ chartData, teamData, setTeamData }) => {
             How Good are the {dataPoint.team_name}:
             <input
               className="input-how-good"
-              type="range" // Use the range input type
-              min={-10}  // Set the minimum value
-              max={10}   // Set the maximum value
-              step={1}   // Set the step value
+              type="range"
+              min={-10}
+              max={10}
+              step={1}
               value={dataPoint.x}
               onChange={(e) => handleEdits(index, 'x', e.target.value)}
             />
@@ -167,23 +171,18 @@ const ScatterPlot = ({ chartData, teamData, setTeamData }) => {
           How Do you Like the {dataPoint.team_name}:
             <input
               className="input-how-like"
-              type="range" // Use the range input type
-              min={-10}  // Set the minimum value
-              max={10}   // Set the maximum value
-              step={1}   // Set the step value
+              type="range"
+              min={-10}
+              max={10}
+              step={1}
               value={dataPoint.y}
               onChange={(e) => handleEdits(index, 'y', e.target.value)}
             />
             <span>{dataPoint.y}</span>
           </label>
-      </div>
+        </div>
       ))}
-
-      {/* Button to apply changes and update chart */}
-      <button onClick={updateChartData}>Update</button>
-
-      </div>
-
+    </div>
     );
   };
   

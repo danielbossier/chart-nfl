@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import ScatterPlot from "./Components/ScatterPlot";
 import { TeamData as initialTeamData } from "./Data";
-import './styles.css'
 
 
 function App() {

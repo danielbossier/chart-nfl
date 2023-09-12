@@ -1,3 +1,7 @@
+.App {
+    background-color: white;
+}
+
 .input-container {
     display: flex;
 }
@@ -8,7 +12,7 @@
 }
 
 .input-div {
-    background-color: lightblue;
+    background-color: rgb(102, 180, 122);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,6 +21,7 @@
 
 .input-how-good,
 .input-how-like {
+    color: red;
     width: 500px;
     text-align: center;
     margin: 0px;

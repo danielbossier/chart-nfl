@@ -158,7 +158,7 @@ const ScatterPlot = ({ chartData, teamData, setTeamData }) => {
       <h3>How Good are the</h3>
       {editedData.map((dataPoint, index) => (
         <div className="input-div" key={index}>
-          {dataPoint.team_name}
+          {dataPoint.team_name}:
             <input
               className="input-how-good"
               type="range"
@@ -178,7 +178,7 @@ const ScatterPlot = ({ chartData, teamData, setTeamData }) => {
         <h3>How do you Like the</h3>
           {editedData.map((dataPoint, index) => (
             <div className="input-div" key={index}>
-            {dataPoint.team_name}
+            {dataPoint.team_name}:
             <input
               className="input-how-like"
               type="range"

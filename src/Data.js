@@ -4,7 +4,7 @@ export const TeamData = [
         team_name: "49ers",
         x: 8,
         y: 10,
-        image: "/logos/helmetlogos/49ershelmet.png"
+        image: "/logos/helmetlogos/49ers1.png"
     },
     {
         id: 2,

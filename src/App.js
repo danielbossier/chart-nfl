@@ -38,7 +38,7 @@ function App() {
 
 return (
   <div className="App">
-      <div className="scatter-container" style={{ width: "1500px" }}>
+      <div className="scatter-container" style={{ height: "66vh", width: "66vw" }}>
         <ScatterPlot
           chartData={chartData}
           teamData={teamData}

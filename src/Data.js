@@ -5,6 +5,8 @@ export const TeamData = [
         x: 8,
         y: 10,
         image: "/logos/helmetlogos/49ers1.png"
+        // conference: NFC
+        // division: WEST
     },
     {
         id: 2,
@@ -252,6 +254,8 @@ export const TeamData = [
         x: 6,
         y: 6,
         image: "/logos/helmetlogos/bengalshelmet.png"
+        // conference: AFC
+        // division: North
 
     },
 ];

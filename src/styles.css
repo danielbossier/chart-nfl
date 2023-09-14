@@ -1,9 +1,23 @@
 .App {
     background-color: white;
+    height: 100vw;
+    width: 100vw;
+    overflow-y: hidden;
+
+}
+
+body {
+    height: 100vw;
+    width: 100vw;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    padding: 0;
 }
 
 .input-container {
     display: flex;
+    overflow-y: scroll;
+    height: 33vh;
 }
 
 .input-column {

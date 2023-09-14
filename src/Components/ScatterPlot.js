@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Scatter } from 'react-chartjs-2';
 // eslint-disable-next-line
 import { Chart as ChartJS } from 'chart.js/auto';
@@ -10,6 +10,8 @@ const ScatterPlot = ({ chartData, teamData, setTeamData }) => {
     
     // To manage edited data
     const [editedData, setEditedData] = useState(TeamData);
+    const inputcontainerref = useRef(null)
+    const [containerHeight, setContainerHeight] = useState(100)
 
     // Initialize images as an empty array
     let images = [];
@@ -113,6 +115,7 @@ const ScatterPlot = ({ chartData, teamData, setTeamData }) => {
       let updatedData = [...editedData];
       updatedData[index][field] = parseInt(value);
       setEditedData(updatedData);
+      updateChartData();
     };
 
     // Update chart data with edited data
@@ -142,18 +145,30 @@ const ScatterPlot = ({ chartData, teamData, setTeamData }) => {
       chartData.labels = updatedLabels;
       chartData.datasets[0] = updatedDataset;
     };
-  
+
+    useLayoutEffect(() => {
+      
+      const exec = async () => {
+        await new Promise(resolve => setTimeout(resolve, 250))
+        const rect = inputcontainerref.current.getBoundingClientRect()
+        setContainerHeight(window.innerHeight - rect.top - 5)
+      }
+      exec()
+    },[])
+    
     return (
     <div>
       {/* Render Chart */}
       <Scatter data={chartData} options={options} />
 
+      {/* replace the below with a search bar that filters team names being displayed in container */}
+
       {/* Apply Changes, Update Chart */}
-      <button onClick={updateChartData}>Update Chart</button>
+      {/* <button onClick={updateChartData}>Update Chart</button> */}
 
       {/* Input form for editing data */}
+      <div className="input-container" ref={inputcontainerref} style={{height: containerHeight}}>
       {/* Left Column: How Good */}
-      <div className="input-container">
       <div className="input-column">
       <h3>How Good are the</h3>
       {editedData.map((dataPoint, index) => (

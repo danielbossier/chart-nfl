@@ -162,6 +162,7 @@ const ScatterPlot = ({ chartData, teamData, setTeamData }) => {
       <Scatter data={chartData} options={options} />
 
       {/* replace the below with a search bar that filters team names being displayed in container */}
+      {/* Also include search for division or conference (account for upcase) */}
 
       {/* Apply Changes, Update Chart */}
       {/* <button onClick={updateChartData}>Update Chart</button> */}

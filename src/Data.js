@@ -63,7 +63,7 @@ export const TeamData = [
         team_name: "Packers",
         x: 2,
         y: 2,
-        image: "/logos/helmetlogos/packers.png",
+        image: "/logos/helmetlogos/packers1.png",
         conference: "NFC",
         division: "North"
         
@@ -83,7 +83,7 @@ export const TeamData = [
         team_name: "Commanders",
         x: -1,
         y: -3,
-        image: "/logos/helmetlogos/commanders.png",
+        image: "/logos/helmetlogos/commanders1.png",
         conference: "NFC",
         division: "East"
 
@@ -103,7 +103,7 @@ export const TeamData = [
         team_name: "Eagles",
         x: 9,
         y: -9,
-        image: "/logos/helmetlogos/eagles.png",
+        image: "/logos/helmetlogos/eagles1.png",
         conference: "NFC",
         division: "East"
         

@@ -243,7 +243,7 @@ export const TeamData = [
         team_name: "Bills",
         x: 7,
         y: 5,
-        image: "/logos/helmetlogos/billshelmet.png",
+        image: "/logos/helmetlogos/bills.png",
         conference: "AFC",
         division: "East"
 
@@ -273,7 +273,7 @@ export const TeamData = [
         team_name: "Jets",
         x: 4,
         y: 2,
-        image: "/logos/helmetlogos/jetshelmet.png",
+        image: "/logos/helmetlogos/jets.png",
         conference: "AFC",
         division: "East"
 

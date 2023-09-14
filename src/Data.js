@@ -4,16 +4,18 @@ export const TeamData = [
         team_name: "49ers",
         x: 8,
         y: 10,
-        image: "/logos/helmetlogos/49ers.png"
-        // conference: NFC
-        // division: WEST
+        image: "/logos/helmetlogos/49ers.png",
+        conference: "NFC",
+        division: "West"
     },
     {
         id: 2,
         team_name: "Rams",
         x: -7,
         y: -7,
-        image: "/logos/helmetlogos/rams.png"
+        image: "/logos/helmetlogos/rams.png",
+        conference: "NFC",
+        division: "West"
 
     },
     {
@@ -21,7 +23,9 @@ export const TeamData = [
         team_name: "Seahawks",
         x: 3,
         y: -10,
-        image: "/logos/helmetlogos/seahawks.png"
+        image: "/logos/helmetlogos/seahawks.png",
+        conference: "NFC",
+        division: "West"
 
     },
     {
@@ -29,7 +33,9 @@ export const TeamData = [
         team_name: "Cardinals",
         x: -10,
         y: -5,
-        image: "/logos/helmetlogos/cardinals.png"
+        image: "/logos/helmetlogos/cardinals.png",
+        conference: "NFC",
+        division: "West"
 
     },
     {
@@ -37,7 +43,9 @@ export const TeamData = [
         team_name: "Saints",
         x: 2,
         y: 0,
-        image: "/logos/helmetlogos/saints.png"
+        image: "/logos/helmetlogos/saints.png",
+        conference: "NFC",
+        division: "South"
 
     },
     {
@@ -45,7 +53,9 @@ export const TeamData = [
         team_name: "Panthers",
         x: -8,
         y: 2,
-        image: "/logos/helmetlogos/panthers.png"
+        image: "/logos/helmetlogos/panthers.png",
+        conference: "NFC",
+        division: "South"
 
     },
     {
@@ -53,7 +63,9 @@ export const TeamData = [
         team_name: "Buccaneers",
         x: -4,
         y: 1,
-        image: "/logos/helmetlogos/buccaneers.png"
+        image: "/logos/helmetlogos/buccaneers.png",
+        conference: "NFC",
+        division: "South"
 
     },
     {
@@ -61,7 +73,9 @@ export const TeamData = [
         team_name: "Falcons",
         x: -1,
         y: 1,
-        image: "/logos/helmetlogos/falcons.png"
+        image: "/logos/helmetlogos/falcons.png",
+        conference: "NFC",
+        division: "South"
 
     },
     {
@@ -69,7 +83,9 @@ export const TeamData = [
         team_name: "Giants",
         x: 2,
         y: -5,
-        image: "/logos/helmetlogos/giants.png"
+        image: "/logos/helmetlogos/giants.png",
+        conference: "NFC",
+        division: "East"
 
     },
     {
@@ -77,7 +93,9 @@ export const TeamData = [
         team_name: "Cowboys",
         x: 6,
         y: -10,
-        image: "/logos/helmetlogos/cowboys.png"
+        image: "/logos/helmetlogos/cowboys.png",
+        conference: "NFC",
+        division: "East"
 
     },
     {
@@ -85,7 +103,9 @@ export const TeamData = [
         team_name: "Eagles",
         x: 9,
         y: -9,
-        image: "/logos/helmetlogos/eagles.png"
+        image: "/logos/helmetlogos/eagles.png",
+        conference: "NFC",
+        division: "East"
 
     },
     {
@@ -93,7 +113,9 @@ export const TeamData = [
         team_name: "Commanders",
         x: -1,
         y: -3,
-        image: "/logos/helmetlogos/commanders.png"
+        image: "/logos/helmetlogos/commanders.png",
+        conference: "NFC",
+        division: "East"
 
     },
     {
@@ -101,7 +123,9 @@ export const TeamData = [
         team_name: "Vikings",
         x: 3,
         y: 1,
-        image: "/logos/helmetlogos/vikings.png"
+        image: "/logos/helmetlogos/vikings.png",
+        conference: "NFC",
+        division: "North"
 
     },
     {
@@ -109,7 +133,9 @@ export const TeamData = [
         team_name: "Packers",
         x: 2,
         y: 2,
-        image: "/logos/helmetlogos/packers.png"
+        image: "/logos/helmetlogos/packers.png",
+        conference: "NFC",
+        division: "North"
 
     },
     {
@@ -117,7 +143,9 @@ export const TeamData = [
         team_name: "Bears",
         x: -5,
         y: -1,
-        image: "/logos/helmetlogos/bears.png"
+        image: "/logos/helmetlogos/bears.png",
+        conference: "NFC",
+        division: "North"
 
     },
     {
@@ -125,7 +153,9 @@ export const TeamData = [
         team_name: "Lions",
         x: 6,
         y: 4,
-        image: "/logos/helmetlogos/lions.png"
+        image: "/logos/helmetlogos/lions.png",
+        conference: "NFC",
+        division: "North"
 
     },
     {
@@ -133,7 +163,9 @@ export const TeamData = [
         team_name: "Broncos",
         x: -2,
         y: -2,
-        image: "/logos/helmetlogos/broncos.png"
+        image: "/logos/helmetlogos/broncos.png",
+        conference: "AFC",
+        division: "West"
 
     },
     {
@@ -141,7 +173,9 @@ export const TeamData = [
         team_name: "Chiefs",
         x: 8,
         y: -4,
-        image: "/logos/helmetlogos/chiefs.png"
+        image: "/logos/helmetlogos/chiefs.png",
+        conference: "AFC",
+        division: "West"
 
     },
     {
@@ -149,7 +183,9 @@ export const TeamData = [
         team_name: "Raiders",
         x: -1,
         y: -1,
-        image: "/logos/helmetlogos/raiders.png"
+        image: "/logos/helmetlogos/raiders.png",
+        conference: "AFC",
+        division: "West"
 
     },
     {
@@ -157,7 +193,9 @@ export const TeamData = [
         team_name: "Chargers",
         x: 4,
         y: 5,
-        image: "/logos/helmetlogos/chargers.png"
+        image: "/logos/helmetlogos/chargers.png",
+        conference: "AFC",
+        division: "West"
 
     },
     {
@@ -165,7 +203,9 @@ export const TeamData = [
         team_name: "Colts",
         x: -7,
         y: -2,
-        image: "/logos/helmetlogos/colts.png"
+        image: "/logos/helmetlogos/colts.png",
+        conference: "AFC",
+        division: "South"
 
     },
     {
@@ -173,7 +213,9 @@ export const TeamData = [
         team_name: "Texans",
         x: -9,
         y: -2,
-        image: "/logos/helmetlogos/texans.png"
+        image: "/logos/helmetlogos/texans.png",
+        conference: "AFC",
+        division: "South"
 
     },
     {
@@ -181,7 +223,9 @@ export const TeamData = [
         team_name: "Jaguars",
         x: 2,
         y: 3,
-        image: "/logos/helmetlogos/jaguars.png"
+        image: "/logos/helmetlogos/jaguars.png",
+        conference: "AFC",
+        division: "South"
 
     },
     {
@@ -189,7 +233,9 @@ export const TeamData = [
         team_name: "Titans",
         x: 3,
         y: -2,
-        image: "/logos/helmetlogos/titans.png"
+        image: "/logos/helmetlogos/titans.png",
+        conference: "AFC",
+        division: "South"
 
     },
     {
@@ -197,7 +243,9 @@ export const TeamData = [
         team_name: "Bills",
         x: 7,
         y: 5,
-        image: "/logos/helmetlogos/billshelmet.png"
+        image: "/logos/helmetlogos/billshelmet.png",
+        conference: "AFC",
+        division: "East"
 
     },
     {
@@ -205,7 +253,9 @@ export const TeamData = [
         team_name: "Dolphins",
         x: 6,
         y: 8,
-        image: "/logos/helmetlogos/dolphins.png"
+        image: "/logos/helmetlogos/dolphins.png",
+        conference: "AFC",
+        division: "East"
 
     },
     {
@@ -213,7 +263,9 @@ export const TeamData = [
         team_name: "Patriots",
         x: -2,
         y: -5,
-        image: "/logos/helmetlogos/patriots.png"
+        image: "/logos/helmetlogos/patriots.png",
+        conference: "AFC",
+        division: "East"
 
     },
     {
@@ -221,7 +273,9 @@ export const TeamData = [
         team_name: "Jets",
         x: 4,
         y: 2,
-        image: "/logos/helmetlogos/jetshelmet.png"
+        image: "/logos/helmetlogos/jetshelmet.png",
+        conference: "AFC",
+        division: "East"
 
     },
     {
@@ -229,7 +283,9 @@ export const TeamData = [
         team_name: "Browns",
         x: 1,
         y: -7,
-        image: "/logos/helmetlogos/browns.png"
+        image: "/logos/helmetlogos/browns.png",
+        conference: "AFC",
+        division: "North"
 
     },
     {
@@ -237,7 +293,9 @@ export const TeamData = [
         team_name: "Steelers",
         x: 4,
         y: 1,
-        image: "/logos/helmetlogos/steelers.png"
+        image: "/logos/helmetlogos/steelers.png",
+        conference: "AFC",
+        division: "North"
 
     },
     {
@@ -245,7 +303,9 @@ export const TeamData = [
         team_name: "Ravens",
         x: 4,
         y: 3,
-        image: "/logos/helmetlogos/ravens.png"
+        image: "/logos/helmetlogos/ravens.png",
+        conference: "AFC",
+        division: "North"
 
     },
     {
@@ -253,9 +313,9 @@ export const TeamData = [
         team_name: "Bengals",
         x: 6,
         y: 6,
-        image: "/logos/helmetlogos/bengals.png"
-        // conference: AFC
-        // division: North
+        image: "/logos/helmetlogos/bengals.png",
+        conference: "AFC",
+        division: "North"
 
     },
 ];

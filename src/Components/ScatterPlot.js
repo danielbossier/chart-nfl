@@ -9,9 +9,11 @@ const ScatterPlot = ({ chartData, teamData, setTeamData }) => {
     const dataset = chartData.datasets[0]; // Assuming there's only one dataset
     
     // To manage edited data
-    const [editedData, setEditedData] = useState(TeamData);
     const inputcontainerref = useRef(null)
     const [containerHeight, setContainerHeight] = useState(100)
+    const [editedData, setEditedData] = useState(TeamData);
+    const [filteredData, setFilteredData] = useState(TeamData);
+    const [searchQuery, setSearchQuery] = useState('');
 
     // Initialize images as an empty array
     let images = [];
@@ -146,6 +148,13 @@ const ScatterPlot = ({ chartData, teamData, setTeamData }) => {
       chartData.datasets[0] = updatedDataset;
     };
 
+    useEffect(() => {
+      const filtered = editedData.filter((dataPoint) =>
+        dataPoint.team_name.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+      setFilteredData(filtered);
+    }, [searchQuery, editedData]);
+
     useLayoutEffect(() => {
       
       const exec = async () => {
@@ -161,18 +170,21 @@ const ScatterPlot = ({ chartData, teamData, setTeamData }) => {
       {/* Render Chart */}
       <Scatter data={chartData} options={options} />
 
-      {/* replace the below with a search bar that filters team names being displayed in container */}
-      {/* Also include search for division or conference (account for upcase) */}
+      {/* Search Bar */}
+      <input
+        type="text"
+        placeholder="Search Teams"
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+      />
 
-      {/* Apply Changes, Update Chart */}
-      {/* <button onClick={updateChartData}>Update Chart</button> */}
 
       {/* Input form for editing data */}
       <div className="input-container" ref={inputcontainerref} style={{height: containerHeight}}>
       {/* Left Column: How Good */}
       <div className="input-column">
       <h3>How Good are the</h3>
-      {editedData.map((dataPoint, index) => (
+      {filteredData.map((dataPoint, index) => (
         <div className="input-div" key={index}>
           {dataPoint.team_name}:
             <input
@@ -192,7 +204,7 @@ const ScatterPlot = ({ chartData, teamData, setTeamData }) => {
       {/* Left Column: How Like */}
       <div className="input-column">
         <h3>How do you Like the</h3>
-          {editedData.map((dataPoint, index) => (
+          {filteredData.map((dataPoint, index) => (
             <div className="input-div" key={index}>
             {dataPoint.team_name}:
             <input

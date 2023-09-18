@@ -9,11 +9,14 @@ const ScatterPlot = ({ chartData, teamData, setTeamData }) => {
     const dataset = chartData.datasets[0]; // Assuming there's only one dataset
     
     // To manage edited data
-    const inputcontainerref = useRef(null)
-    const [containerHeight, setContainerHeight] = useState(100)
+    const inputcontainerref = useRef(null);
+    const [containerHeight, setContainerHeight] = useState(100);
+
     const [editedData, setEditedData] = useState(TeamData);
     const [filteredData, setFilteredData] = useState(TeamData);
     const [searchQuery, setSearchQuery] = useState('');
+    const [selectedConference, setSelectedConference] = useState('');
+    const [selectedDivision, setSelectedDivision] = useState('');
 
     // Initialize images as an empty array
     let images = [];
@@ -149,11 +152,41 @@ const ScatterPlot = ({ chartData, teamData, setTeamData }) => {
     };
 
     useEffect(() => {
-      const filtered = editedData.filter((dataPoint) =>
-        dataPoint.team_name.toLowerCase().includes(searchQuery.toLowerCase())
-      );
+      let filtered = editedData;
+
+      if (searchQuery) {
+        filtered = filtered.filter((dataPoint) =>
+          dataPoint.team_name.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+      }
+
+      if (selectedConference) {
+        filtered = filtered.filter(
+          (dataPoint) =>
+            dataPoint.conference.toLowerCase() ===
+            selectedConference.toLowerCase()
+        );
+      }
+
+      if (selectedDivision) {
+        filtered = filtered.filter(
+          (dataPoint) =>
+            dataPoint.division.toLowerCase() ===
+            selectedDivision.toLowerCase()
+        );
+      }
+
       setFilteredData(filtered);
-    }, [searchQuery, editedData]);
+    }, [searchQuery, selectedConference, selectedDivision, editedData]);
+
+    // Get unique conference and division values
+    const uniqueConferences = Array.from(
+      new Set(editedData.map((dataPoint) => dataPoint.conference))
+    );
+    const uniqueDivisions = Array.from(
+      new Set(editedData.map((dataPoint) => dataPoint.division))
+    );
+    
 
     useLayoutEffect(() => {
       
@@ -177,6 +210,34 @@ const ScatterPlot = ({ chartData, teamData, setTeamData }) => {
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
       />
+
+      {/* Dropdown for Conference Sorting */}
+      <select
+        value={selectedConference}
+        onChange={(e) => setSelectedConference(e.target.value)}
+      >
+        <option value="">NFL</option>
+        {uniqueConferences.map((conference, index) => (
+          <option key={index} value={conference}>
+            {conference}
+          </option>
+        ))}
+      </select>
+
+      {/* Dropdown for Division Sorting */}
+      <select
+        value={selectedDivision}
+        onChange={(e) => setSelectedDivision(e.target.value)}
+      >
+        <option value="">All Divisions</option>
+        {uniqueDivisions.map((division, index) => (
+          <option key={index} value={division}>
+            {division}
+          </option>
+        ))}
+      </select>
+
+
 
 
       {/* Input form for editing data */}

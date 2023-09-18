@@ -244,22 +244,24 @@ const ScatterPlot = ({ chartData, teamData, setTeamData }) => {
       <div className="input-container" ref={inputcontainerref} style={{height: containerHeight}}>
       {/* Left Column: How Good */}
       <div className="input-column">
-      <h3>How Good are the</h3>
-      {filteredData.map((dataPoint, index) => (
-        <div className="input-div" key={index}>
-          {dataPoint.team_name}:
-            <input
-              className="input-how-good"
-              type="range"
-              min={-10}
-              max={10}
-              step={1}
-              value={dataPoint.x}
-              onChange={(e) => handleEdits(index, 'x', e.target.value)}
-            />
-          <span>{dataPoint.x}</span>
-      </div>
-      ))}
+        <h3>How Good are the</h3>
+        {filteredData.map((dataPoint, index) => (
+          <div className="input-div" key={index}>
+            <div className="input-wrapper"> {/* Flex container */}
+              {dataPoint.team_name}:
+              <input
+                className="input-how-good"
+                type="range"
+                min={-10}
+                max={10}
+                step={1}
+                value={dataPoint.x}
+                onChange={(e) => handleEdits(index, 'x', e.target.value)}
+              />
+              <span>{dataPoint.x}</span> {/* Data point displayed to the right */}
+            </div>
+          </div>
+        ))}
       </div>
 
       {/* Left Column: How Like */}
@@ -267,19 +269,21 @@ const ScatterPlot = ({ chartData, teamData, setTeamData }) => {
         <h3>How do you Like the</h3>
           {filteredData.map((dataPoint, index) => (
             <div className="input-div" key={index}>
-            {dataPoint.team_name}:
-            <input
-              className="input-how-like"
-              type="range"
-              min={-10}
-              max={10}
-              step={1}
-              value={dataPoint.y}
-              onChange={(e) => handleEdits(index, 'y', e.target.value)}
-            />
-          <span>{dataPoint.y}</span>
-        </div>
-      ))}
+              <div className='input-wrapper'> {/* Flex container */}
+                {dataPoint.team_name}:
+                <input
+                  className="input-how-like"
+                  type="range"
+                  min={-10}
+                  max={10}
+                  step={1}
+                  value={dataPoint.y}
+                  onChange={(e) => handleEdits(index, 'y', e.target.value)}
+                />
+                <span>{dataPoint.y}</span>
+              </div>
+            </div>
+          ))}
     </div>
     </div>
     </div>

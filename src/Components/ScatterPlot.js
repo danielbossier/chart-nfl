@@ -248,7 +248,7 @@ const ScatterPlot = ({ chartData, teamData, setTeamData }) => {
         {filteredData.map((dataPoint, index) => (
           <div className="input-div" key={index}>
             <div className="input-wrapper"> {/* Flex container */}
-              {dataPoint.team_name}:
+              <div style={{textAlign: "left"}}>{dataPoint.team_name}:</div>
               <input
                 className="input-how-good"
                 type="range"
@@ -270,7 +270,7 @@ const ScatterPlot = ({ chartData, teamData, setTeamData }) => {
           {filteredData.map((dataPoint, index) => (
             <div className="input-div" key={index}>
               <div className='input-wrapper'> {/* Flex container */}
-                {dataPoint.team_name}:
+              <div style={{textAlign: "left"}}>{dataPoint.team_name}:</div>
                 <input
                   className="input-how-like"
                   type="range"

@@ -25,6 +25,11 @@ body {
     padding: 1px;
 }
 
+.input-wrapper {
+    display: grid;
+    grid-template-columns: 3fr 7fr 2fr;
+}
+
 .input-div {
     background-color: rgb(233, 223, 89);
     display: flex;

@@ -3,7 +3,6 @@
     height: 100vw;
     width: 100vw;
     overflow-y: hidden;
-
 }
 
 body {
@@ -42,6 +41,6 @@ body {
 .input-how-like {
     color: red;
     width: 400px;
-    text-align: center;
+    /* text-align: left; */
     margin: 0px;
 }

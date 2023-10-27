@@ -220,20 +220,20 @@ export const TeamData = [
     },
     {
         id: 23,
-        team_name: "Steelers",
+        team_name: "Ravens",
         x: 4,
-        y: 1,
-        image: "/logos/helmetlogos/steelers.png",
+        y: 3,
+        image: "/logos/helmetlogos/ravens.png",
         conference: "AFC",
         division: "North"
 
     },
     {
         id: 24,
-        team_name: "Ravens",
+        team_name: "Steelers",
         x: 4,
-        y: 3,
-        image: "/logos/helmetlogos/ravens.png",
+        y: 1,
+        image: "/logos/helmetlogos/steelers.png",
         conference: "AFC",
         division: "North"
 

@@ -13,7 +13,7 @@ const ScatterPlot = ({ chartData, teamData, setTeamData }) => {
     const [containerHeight, setContainerHeight] = useState(100);
 
     const [editedData, setEditedData] = useState(TeamData);
-    const [filteredData, setFilteredData] = useState(TeamData);
+    const [filteredData, setFilteredData] = useState(editedData);
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedConference, setSelectedConference] = useState('');
     const [selectedDivision, setSelectedDivision] = useState('');

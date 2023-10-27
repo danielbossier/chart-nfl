@@ -83,7 +83,7 @@ export const TeamData = [
         team_name: "Commanders",
         x: -1,
         y: -3,
-        image: "/logos/helmetlogos/commanders1.png",
+        image: "/logos/helmetlogos/commanders.png",
         conference: "NFC",
         division: "East"
 
